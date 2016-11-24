@@ -22,7 +22,7 @@ sudo apt-get install libusb-1.0-0-dev graphviz mono-complete
 sudo apt-get install qt-sdk openjdk-7-jdk openjdk-7-jre
 ```
 
-##Install Kincet driver on Ubuntu
+##Install Kinect driver on Ubuntu
 
 Install 3 drivers  below:  
 
@@ -30,7 +30,7 @@ Install 3 drivers  below:
 * Kinect Sener Module  
 * NITE  
 
-These files can be download from this git repo.  
+These files can be downloaded from this git repo.  
 
 ###Install OpenNI
 ```
@@ -42,7 +42,7 @@ cd ../Redist/OpenNI-Bin-Dev-Linux-x64-v1.5.7.10
 sudo ./install.sh
 ```
 
-###Install Kinect SensorModule
+###Install Kinect Sensor Module
 ```
 cd ${YOURDOWNLOADPATH}/kinect_driver/SensorKinect
 cd Platform/Linux/CreateRedist
@@ -59,7 +59,7 @@ cd ${YOURDOWNLOADPATH}/kinect_driver/NITE
 sudo ./install.sh
 ```  
 ###Test Kinect driver
-Then power on the kinect, plugin the USB wire and enter code below in the terminal:
+Then power on the kinect, plugin the USB wire and enter commands below in the terminal:
 ```
 cd ${YOURDOWNLOADPATH}/kinect_driver/OpenNI/Platform/Linux/Bin/x64-Release
 ./NiViewer 
@@ -69,14 +69,14 @@ If error: **Open failed: Failed to set USB interface!**, use this trick:
 sudo modprobe -r gspca_kinect 
 sudo modprobe -r gspca_main
 ```
-If the problem is not solved, check your USB port, USB hub is NOT supported, you should plug USB into PC directly. And USB2.0 is better(I haven't tested that).
+If the problem is not solved, check your USB port, USB hub is NOT supported, you should plug USB into PC directly. And USB2.0 is better(I didn't test that).
 
 if error: **Open failed: Xiron OS failed to wait on event!**, do this:
 ```
 sudo chmod +x /usr/bin/XnSensorServer
 ```
 
-Both RGB image and depth image should be shown on screen if setup successfully.
+Both RGB image and depth image should be shown on screen if you setup correctly.
 
 ##Install driver for ROS
 From ROS Wiki page(*http://wiki.ros.org/openni_kinect*)
@@ -84,6 +84,7 @@ From ROS Wiki page(*http://wiki.ros.org/openni_kinect*)
 ```
 sudo apt-get install ros-indigo-openni-camera ros-indigo-openni-launch
 ```
+
 Use command below to launch kinect.
 ```
 roslaunch openni_launch openni.launch
